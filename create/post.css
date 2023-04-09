@@ -19,7 +19,7 @@ button:disabled {
 }
 
 .preload {
-  width:20px;
+  width: 20px;
   height: 20px;
   border: 4px solid #fff;
   border-top: 4px solid transparent
@@ -57,4 +57,32 @@ button:disabled {
 .session {
   margin: 0.6rem;
   margin-top: 0.25rem;
+}
+
+.assets {
+  display: flex;
+  flex-direction: row;
+  overflow: scroll;
+}
+
+
+.assets div {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 12px;
+  margin: 0.2rem;
+  overflow: scroll;
+  min-width: 30px;
+  text-align: center;
+}
+
+.assets input {
+  display: none
+}
+
+.assets img {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px
 }

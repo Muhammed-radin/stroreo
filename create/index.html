@@ -50,16 +50,17 @@
       <input type="text" id="type" placeholder="type of resource (eg:- 2d, image)">
     </div>
     <div class="session">
-      <p>icon:</p>
-      <input type="file" accept="image, image/*, image/png" id="icon">
-    </div>
-    <div class="session">
-      <p>screenshots: (optional)</p>
-      <input type="file" multiple id="screenshots">
-    </div>
-    <div class="session">
-      <p>source:</p>
-      <input type="file" id="source">
+      <p>click to load you source:</p>
+      <div class="assets">
+        <div onclick="$('#icon').click()">icon</div>
+        <input type="file" accept="image, image/*, image/png" id="icon">
+
+        <div onclick="$('#screenshots').click()">screenshots (optional)</div>
+        <input type="file" accept="image, image/*, image/png" multiple id="screenshots">
+
+        <div onclick="$('#source').click()">source </div>
+        <input type="file" id="source">
+      </div>
     </div>
     <div class="session">
       <p>tags:</p>
@@ -77,7 +78,7 @@
     </div>
     <div class="session">
       <div class="right-icons">
-        <button id="submit" class="btn" >
+        <button id="submit" class="btn">
           upload
           <ion-icon name="cloud-upload-outline"></ion-icon>
         </button>

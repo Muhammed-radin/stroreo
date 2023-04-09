@@ -38,7 +38,7 @@ function toDataURL(url, callback) {
   xhr.onload = function() {
     var reader = new FileReader();
     reader.onloadend = function() {
-      callback(xhr.response,reader.result);
+      callback(xhr.response, reader.result);
     }
     reader.readAsDataURL(xhr.response);
   };
@@ -47,31 +47,50 @@ function toDataURL(url, callback) {
   xhr.send();
 }
 
-toDataURL('post.css', function(e){
-  console.log(e);
-})
+$("#icon").onchange = function() {
+  $('#icon').files[0];
 
-
-
-$('#submit').onclick = function() {
-  $('.create-div').querySelectorAll('.session').forEach(function(v, i){
-    v.style.display = 'none'
-  })
-  $(".create-div").innerHTML += '<center><p>Converting...</p><progress max=100 id="progress"></progress></center>'
-  
-  name = $("#name").value
-  des = $("#description").value
-  type = $("#type").value
   var loader = new FileReader()
   loader.onloadend = function() {
     icon = loader.result
-    $('progress').value = 20
-  }
-  console.log($("#icon").files);
-  //loader.readAsDataURL($('#icon').files[0])
 
-  var loadscreenData = {}
+    document.querySelectorAll(".assets div")[0].innerHTML = '<img src="' + icon + '">';
+  }
+  console.log($("#icon").files[0]);
+
+  loader.readAsDataURL($('#icon').files[0])
+
+}
+
+$("#screenshots").onchange = function() {
+  var files = document.getElementById('screenshots').files;
+  
+  files.forEach(function(v, i) {
+    var loader = new FileReader()
+    loader.onloadend = function() {
+      screenshot.push(loader.result)
+
+      document.querySelectorAll(".assets div")[1].innerHTML = '';
+      document.querySelectorAll(".assets div")[1].innerHTML += '<img src="' + screenshot[i] + '">';
+    }
+    
+    loader.readAsDataURL(v)
+  })
+}
+
+
+$('#submit').onclick = function() {
+  $('.create-div').querySelectorAll('.session').forEach(function(v, i) {
+    v.style.display = 'none'
+  })
+  $(".create-div").innerHTML += '<center><p>Converting...</p><progress max=100 id="progress"></progress></center>'
+
+  name = $("#name").value
+  des = $("#description").value
+  type = $("#type").value
+
+  /* var loadscreenData = {}
   $('#screenshots').files.forEach(function(v) {
     loadscreenData
-  })
+  })*/
 }

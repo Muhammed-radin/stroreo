@@ -11,6 +11,10 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 p {
   margin: 0.2rem;
 }
@@ -78,14 +82,16 @@ nav p {
   background: #477EE0
 }
 
-input, textarea {
+input,
+textarea {
   padding: 0.2rem 1rem;
-  border-radius: 5px;
+  border-radius: 3.7px;
   outline: none;
-  border: 1px solid #797F86
+  border: 1px solid #797F86;
 }
 
-input:focus, textarea:focus{
+input:focus,
+textarea:focus {
   border: 2px solid #477EE0
 }
 
@@ -114,21 +120,30 @@ button {
   text-align: center;
 }
 
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
 @keyframes spin {
   0% {
     transform: rotate(0deg)
-  } 
+  }
+
   50% {
     transform: rotate(1500deg)
   }
+
   100% {
     transform: rotate(0deg)
   }
 }
 
 
-.card button:hover, .btn-hover:hover {
-    box-shadow: 2px 2px 3px inset #33333350
+
+.card button:hover,
+.btn-hover:hover {
+  box-shadow: 2px 2px 3px inset #33333350
 }
 
 .card ion-icon {
