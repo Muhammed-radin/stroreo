@@ -69,21 +69,23 @@
       <input type="text" id="tags" placeholder="tags">
     </div>
     <div class="session">
-      <p>available in:</p>
-      <input type="radio" name="" id="website"><span>website</span>
-      <input type="radio" name="" id="android"><span>android</span>
-      <input type="radio" name="" id="ios"><span>ios</span>
-      <input type="radio" id="another"> <span>source</span>
+      <p>available:</p>
+      <input type="checkbox" name="" id="website"><span>website</span>
+      <input type="checkbox" name="" id="android"><span>android</span>
+      <input type="checkbox" name="" id="ios"><span>ios</span>
+      <input type="checkbox" id="another"> <span>source</span>
     </div>
     <div class="session">
       <div class="right-icons">
-        <button class="btn-hover">
+        <button id="submit" class="btn" >
           upload
           <ion-icon name="cloud-upload-outline"></ion-icon>
         </button>
       </div>
     </div>
   </div>
+
+  <script src="post.js"></script>
 </body>
 
 </html>

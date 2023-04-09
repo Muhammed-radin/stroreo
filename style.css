@@ -99,6 +99,34 @@ button {
   margin: 0.2rem;
 }
 
+.preload {
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  border-top: 8px solid transparent;
+  animation: spin 2s infinite;
+}
+
+.btn-submit {
+  width: 98%;
+  text-align: center;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg)
+  } 
+  50% {
+    transform: rotate(1500deg)
+  }
+  100% {
+    transform: rotate(0deg)
+  }
+}
+
+
 .card button:hover, .btn-hover:hover {
     box-shadow: 2px 2px 3px inset #33333350
 }

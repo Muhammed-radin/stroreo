@@ -5,6 +5,10 @@
   font-size: 13px
 }
 
+button:disabled {
+  background: #ccc;
+}
+
 
 @media screen and (max-width: 340px) {
 
@@ -12,6 +16,13 @@
   .create-div textarea {
     width: 280px
   }
+}
+
+.preload {
+  width:20px;
+  height: 20px;
+  border: 4px solid #fff;
+  border-top: 4px solid transparent
 }
 
 .create-div textarea {
@@ -23,6 +34,21 @@
   width: 300px;
 }
 
+.tag {
+  background: #DFDFDF;
+  padding: 0.5rem 1rem;
+  font-size: 12px;
+  border-radius: 20px;
+  width: max-content;
+  margin: 0.2rem;
+}
+
+.tags {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap
+}
+
 .create-div input[type="radio"],
 .create-div input[type="checkbox"] {
   width: 20px !important
@@ -30,4 +56,5 @@
 
 .session {
   margin: 0.6rem;
+  margin-top: 0.25rem;
 }
