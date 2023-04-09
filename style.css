@@ -1,0 +1,114 @@
+body {
+  margin: 0;
+}
+
+/*
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Rubik', sans-serif;
+*/
+
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
+p {
+  margin: 0.2rem;
+}
+
+nav {
+  background-image: linear-gradient(to bottom, #237F21, #48C645);
+  color: #fff;
+  height: 45px;
+  box-shadow: 1px 2px 3px #ccc;
+  display: flex;
+  flex-direction: row;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  left: 0;
+  z-index: 999
+}
+
+nav p {
+  font-weight: 600;
+  font-size: 18px;
+  margin: 0.5rem;
+}
+
+.icon-button {
+  background: transparent;
+  width: max-content;
+  height: max-content;
+  padding: 0.3rem;
+  border-radius: 8px;
+  border: 0;
+  outline: none;
+  color: #fff;
+  font-size: 28px
+}
+
+.right-icons {
+  position: absolute;
+  right: 10px;
+}
+
+.card {
+  margin: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px
+}
+
+.card div {
+  padding: 0.5rem;
+}
+
+.card-head {
+  font-weight: 600;
+  display: flex;
+  flex-direction: row;
+  background: #E3E3E3;
+  overflow: hidden;
+}
+
+.card-head p {
+  margin: 0.5rem;
+}
+
+.bg-primary {
+  background: #477EE0
+}
+
+input, textarea {
+  padding: 0.2rem 1rem;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid #797F86
+}
+
+input:focus, textarea:focus{
+  border: 2px solid #477EE0
+}
+
+button {
+  padding: 0.5rem 1rem;
+  outline: none;
+  border: 0;
+  background: #43C040;
+  border-radius: 7px;
+  color: #fff;
+  margin: 0.2rem;
+}
+
+.card button:hover, .btn-hover:hover {
+    box-shadow: 2px 2px 3px inset #33333350
+}
+
+.card ion-icon {
+  font-size: 16px
+}
+
+.img-preview {
+  width: 64px;
+  height: 64px;
+  border-radius: 9px;
+}

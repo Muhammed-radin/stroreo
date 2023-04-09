@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Strore - post your resource</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="post.css">
+</head>
+
+<body>
+  <nav>
+    <button class="icon-button">
+      <ion-icon name="menu-outline"></ion-icon>
+    </button>
+    <p>Upload</p>
+    <div class="right-icons">
+      <button class="icon-button">
+        <ion-icon name="chevron-back-outline" onclick="window.location.href = '../'"></ion-icon>
+      </button>
+      <button class="icon-button">
+        <ion-icon name="search-outline"></ion-icon>
+      </button>
+      <button class="icon-button">
+        <ion-icon name="person-circle-outline"></ion-icon>
+      </button>
+    </div>
+  </nav>
+  <div class="create-div">
+    <div class="session">
+      <p>resource title:</p>
+      <input type="text" id="name" placeholder="title">
+    </div>
+    <div class="session">
+      <p>description:</p>
+      <textarea placeholder="short description" id="description" cols="30" rows="10"></textarea>
+    </div>
+    <div class="session">
+      <p>type:</p>
+      <input type="text" id="type" placeholder="type of resource (eg:- 2d, image)">
+    </div>
+    <div class="session">
+      <p>icon:</p>
+      <input type="file" accept="image, image/*, image/png" id="icon">
+    </div>
+    <div class="session">
+      <p>screenshots: (optional)</p>
+      <input type="file" multiple id="screenshots">
+    </div>
+    <div class="session">
+      <p>source:</p>
+      <input type="file" id="source">
+    </div>
+    <div class="session">
+      <p>tags:</p>
+      <div class="tags">
+
+      </div>
+      <input type="text" id="tags" placeholder="tags">
+    </div>
+    <div class="session">
+      <p>available in:</p>
+      <input type="radio" name="" id="website"><span>website</span>
+      <input type="radio" name="" id="android"><span>android</span>
+      <input type="radio" name="" id="ios"><span>ios</span>
+      <input type="radio" id="another"> <span>source</span>
+    </div>
+    <div class="session">
+      <div class="right-icons">
+        <button class="btn-hover">
+          upload
+          <ion-icon name="cloud-upload-outline"></ion-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
