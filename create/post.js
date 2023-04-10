@@ -99,9 +99,9 @@ $('#submit').onclick = function() {
   $('.create-div').querySelectorAll('.session').forEach(function(v, i) {
     v.style.display = 'none'
   });
-  
+
   uploadIt()
-  
+
 }
 
 
@@ -136,8 +136,7 @@ function uploadIt() {
       window.onerror = function(e) {
         alert(e)
       }
-      
-      $("#uploadStatus").style.display = 'block'
+
       document.getElementById('stus') ? document.getElementById('stus').innerHTML = xhr.statusText + '(' + xhr.status + ")" : null
     }
   });
@@ -148,4 +147,5 @@ function uploadIt() {
   xhr.setRequestHeader("cache-control", "no-cache");
 
   xhr.send(data);
+  $("#uploadStatus").style.display = 'block'
 }
