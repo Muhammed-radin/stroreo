@@ -6,7 +6,7 @@
 }
 
 button:disabled {
-  background: #ccc;
+  background: #ccc !important;
 }
 
 

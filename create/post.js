@@ -5,6 +5,7 @@ function $(q) {
 var name, shortDes, des,
   icon,
   source, tags = [],
+  developer,
   web, android, ios, another, version
 
 
@@ -68,6 +69,21 @@ setInterval(function() {
   android = $("#android").checked
   ios = $("#ios").checked
   another = $("#another").checked
+
+  name = document.getElementById('name').value
+  shortDes = $("#shortDescription").value
+  des = $("#description").value
+  developer = $("#developer").value
+  version = $("#version").value
+
+  if (name == '' && shortDes == '' && des == '' && developer == '' && version == '') {
+    //|| name == null || name == false){
+    document.getElementById('submit').disabled = true
+    console.log(1);
+  } else {
+    document.getElementById("submit").disabled = false
+    console.log(2);
+  }
 })
 
 
@@ -76,12 +92,9 @@ $('#submit').onclick = function() {
     v.style.display = 'none'
   })
 
-  $(".create-div").innerHTML += '<center><p>Uploading...</p><progress max=100 id="progress"></progress></center>'
+  $(".create-div").innerHTML += '<center><p id="stus">Uploading...</p><progress max=100 id="progress"></progress></center>'
 
-  name = $("#name").value
-  shortDes = $("#shortDescription").value
-  des = $("#description").value
-  version = $("#version").value
+
 
   setTimeout(function() {
     uploadIt()
@@ -116,6 +129,10 @@ function uploadIt() {
   xhr.addEventListener("readystatechange", function() {
     if (this.readyState === 4) {
       console.log(this.responseText);
+      window.onerror = function(e) {
+        alert(e)
+      }
+      document.getElementById('stus') ? document.getElementById('stus').innerHTML = xhr.statusText + '(' + xhr.status + ")" : null
     }
   });
 
