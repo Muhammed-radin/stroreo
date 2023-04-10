@@ -98,15 +98,10 @@ setInterval(function() {
 $('#submit').onclick = function() {
   $('.create-div').querySelectorAll('.session').forEach(function(v, i) {
     v.style.display = 'none'
-  })
-
-  $(".create-div").innerHTML += '<center><p id="stus">Uploading...</p><progress max=100 id="progress"></progress></center>'
-
-
-
-  setTimeout(function() {
-    uploadIt();
-  }, 500)
+  });
+  
+  uploadIt()
+  
 }
 
 
@@ -116,10 +111,10 @@ const DB_NAME = 'grean-9ebb'
 
 function uploadIt() {
 
-  
-  
+
+
   var data = JSON.stringify({
-    "name": $("#name").value,
+    "name": document.getElementById("name").value,
     "shor_des": shortDes,
     "description": des,
     "version": version,
@@ -127,14 +122,10 @@ function uploadIt() {
     "tags": tags,
     "icon": icon,
     "source": source,
-    "website": website,
+    "website": web,
     "android": android,
     "ios": ios,
   });
-
-  setTimeout(function() {
-    console.log(data);
-  }, 500)
 
   var xhr = new XMLHttpRequest();
   xhr.withCredentials = false;
@@ -145,6 +136,8 @@ function uploadIt() {
       window.onerror = function(e) {
         alert(e)
       }
+      
+      $("#uploadStatus").style.display = 'block'
       document.getElementById('stus') ? document.getElementById('stus').innerHTML = xhr.statusText + '(' + xhr.status + ")" : null
     }
   });
