@@ -147,5 +147,5 @@ function uploadIt() {
   xhr.setRequestHeader("x-apikey", API_KEY);
   xhr.setRequestHeader("cache-control", "no-cache");
 
-  //xhr.send(data);
+  xhr.send(data);
 }
