@@ -1,0 +1,22 @@
+[post.js]
+
+$("#screenshots").onchange = function() {
+  var files = document.getElementById('screenshots').files;
+
+  if (files instanceof Array) {
+    alert('DONE')
+    files.forEach(function(v, i) {
+      var loader = new FileReader()
+      loader.onloadend = function() {
+        screenshot.push(loader.result)
+
+        document.querySelectorAll(".assets div")[1].innerHTML = '';
+        document.querySelectorAll(".assets div")[1].innerHTML += '<img src="' + screenshot[i] + '">';
+      }
+
+      loader.readAsDataURL(v)
+    })
+  } else {
+    alert('ERR')
+  }
+}

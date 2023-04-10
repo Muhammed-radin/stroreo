@@ -2,10 +2,10 @@ function $(q) {
   return document.querySelector(q)
 }
 
-var name, des, type,
-  icon, screenshot = [],
+var name, shortDes, des,
+  icon,
   source, tags = [],
-  web, android, ios, another
+  web, android, ios, another, version
 
 
 $('#tags').addEventListener("keyup", function(e) {
@@ -24,14 +24,6 @@ $('#tags').addEventListener("keyup", function(e) {
   }
 })
 
-/*setInterval(function() {
-  if (name && des && type && icon && source) {
-    $("#submit").disabled = false
-  } else {
-    $("#submit").disabled = false
-  }
-
-})*/
 
 function toDataURL(url, callback) {
   var xhr = new XMLHttpRequest();
@@ -59,38 +51,78 @@ $("#icon").onchange = function() {
   console.log($("#icon").files[0]);
 
   loader.readAsDataURL($('#icon').files[0])
-
 }
 
-$("#screenshots").onchange = function() {
-  var files = document.getElementById('screenshots').files;
-  
-  files.forEach(function(v, i) {
-    var loader = new FileReader()
-    loader.onloadend = function() {
-      screenshot.push(loader.result)
+$('#source').onchange = function() {
+  var loader = new FileReader()
+  loader.onloadend = function() {
+    source = loader.result
 
-      document.querySelectorAll(".assets div")[1].innerHTML = '';
-      document.querySelectorAll(".assets div")[1].innerHTML += '<img src="' + screenshot[i] + '">';
-    }
-    
-    loader.readAsDataURL(v)
-  })
+    document.querySelectorAll(".assets div")[1].innerHTML = 'loaded';
+  }
+  loader.readAsDataURL($("#source").files[0])
 }
+
+setInterval(function() {
+  web = $("#website").checked
+  android = $("#android").checked
+  ios = $("#ios").checked
+  another = $("#another").checked
+})
 
 
 $('#submit').onclick = function() {
   $('.create-div').querySelectorAll('.session').forEach(function(v, i) {
     v.style.display = 'none'
   })
-  $(".create-div").innerHTML += '<center><p>Converting...</p><progress max=100 id="progress"></progress></center>'
+
+  $(".create-div").innerHTML += '<center><p>Uploading...</p><progress max=100 id="progress"></progress></center>'
 
   name = $("#name").value
+  shortDes = $("#shortDescription").value
   des = $("#description").value
-  type = $("#type").value
+  version = $("#version").value
 
-  /* var loadscreenData = {}
-  $('#screenshots').files.forEach(function(v) {
-    loadscreenData
-  })*/
+  setTimeout(function() {
+    uploadIt()
+  }, 500)
+}
+
+
+const API_KEY = '64336d2939cf552ef728c0e1'
+const WEB_URL = 'https://grean-9ebb.restdb.io/rest/apps'
+const DB_NAME = 'grean-9ebb'
+
+function uploadIt() {
+  var data = JSON.stringify({
+    "name": name,
+    shor_des: shortDes,
+    description: des,
+    version: version,
+    tags: tags,
+    icon: icon,
+    source: source,
+    website: website,
+    android: android,
+    ios: ios,
+    source: source
+  });
+
+  console.log(data);
+
+  var xhr = new XMLHttpRequest();
+  xhr.withCredentials = false;
+
+  xhr.addEventListener("readystatechange", function() {
+    if (this.readyState === 4) {
+      console.log(this.responseText);
+    }
+  });
+
+  xhr.open("POST", "https://grean-9ebb.restdb.io/rest/apps");
+  xhr.setRequestHeader("content-type", "application/json");
+  xhr.setRequestHeader("x-apikey", API_KEY);
+  xhr.setRequestHeader("cache-control", "no-cache");
+
+  xhr.send(data);
 }

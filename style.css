@@ -74,7 +74,12 @@ nav p {
   overflow: hidden;
 }
 
-.card-head p {
+.subtitle {
+  font-weight: normal;
+  font-size: 11px
+}
+
+.card-head .headers {
   margin: 0.5rem;
 }
 

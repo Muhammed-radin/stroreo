@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Strore - post your resource</title>
+  <title>Strore - post your Application</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,39 +38,47 @@
   </nav>
   <div class="create-div">
     <div class="session">
-      <p>resource title:</p>
+      <p>Application title:</p>
       <input type="text" id="name" placeholder="title">
     </div>
     <div class="session">
-      <p>description:</p>
-      <textarea placeholder="short description" id="description" cols="30" rows="10"></textarea>
+      <p>Short Description:</p>
+      <textarea placeholder="short description" id="shortDescription" cols="20" rows="10"></textarea>
     </div>
     <div class="session">
-      <p>type:</p>
-      <input type="text" id="type" placeholder="type of resource (eg:- 2d, image)">
+      <p>Detailed Description:</p>
+      <textarea placeholder="detailed description" id="description" cols="20" rows="10"></textarea>
     </div>
     <div class="session">
-      <p>click to load you source:</p>
+      <p>Developer:</p>
+      <input type="text" id="developer" placeholder="developer name">
+    </div>
+    <div class="session">
+      <p>Version:</p>
+      <input type="text" id="version" placeholder="version">
+    </div>
+    <div class="session">
+      <p>Click to load your source:</p>
       <div class="assets">
         <div onclick="$('#icon').click()">icon</div>
         <input type="file" accept="image, image/*, image/png" id="icon">
 
-        <div onclick="$('#screenshots').click()">screenshots (optional)</div>
-        <input type="file" accept="image, image/*, image/png" multiple id="screenshots">
+        <!--div onclick="$('#screenshots').click()">screenshots (optional)</div>
+        <input type="file" accept="image, image/*, image/png" multiple id="screenshots"-->
 
         <div onclick="$('#source').click()">source </div>
         <input type="file" id="source">
       </div>
     </div>
     <div class="session">
-      <p>tags:</p>
+      <p>Tags:</p>
       <div class="tags">
 
       </div>
       <input type="text" id="tags" placeholder="tags">
     </div>
     <div class="session">
-      <p>available:</p>
+      <p>Available:</p>
       <input type="checkbox" name="" id="website"><span>website</span>
       <input type="checkbox" name="" id="android"><span>android</span>
       <input type="checkbox" name="" id="ios"><span>ios</span>
