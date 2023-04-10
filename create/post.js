@@ -76,14 +76,22 @@ setInterval(function() {
   developer = $("#developer").value
   version = $("#version").value
 
-  if (name == '' && shortDes == '' && des == '' && developer == '' && version == '') {
-    //|| name == null || name == false){
+  if (name == '') {
     document.getElementById('submit').disabled = true
-    console.log(1);
+  } else if (shortDes == '') {
+    document.getElementById('submit').disabled = true
+  } else if (des == '') {
+    document.getElementById('submit').disabled = true
+  } else if (developer == '') {
+    document.getElementById('submit').disabled = true
+  } else if (version == '') {
+    document.getElementById('submit').disabled = true
+  } else if (tags.length == 0) {
+    document.getElementById('submit').disabled = true
   } else {
     document.getElementById("submit").disabled = false
-    console.log(2);
   }
+
 })
 
 
@@ -97,7 +105,7 @@ $('#submit').onclick = function() {
 
 
   setTimeout(function() {
-    uploadIt()
+    uploadIt();
   }, 500)
 }
 
@@ -107,21 +115,26 @@ const WEB_URL = 'https://grean-9ebb.restdb.io/rest/apps'
 const DB_NAME = 'grean-9ebb'
 
 function uploadIt() {
+
+  
+  
   var data = JSON.stringify({
-    "name": name,
-    shor_des: shortDes,
-    description: des,
-    version: version,
-    tags: tags,
-    icon: icon,
-    source: source,
-    website: website,
-    android: android,
-    ios: ios,
-    source: source
+    "name": $("#name").value,
+    "shor_des": shortDes,
+    "description": des,
+    "version": version,
+    "developer": developer,
+    "tags": tags,
+    "icon": icon,
+    "source": source,
+    "website": website,
+    "android": android,
+    "ios": ios,
   });
 
-  console.log(data);
+  setTimeout(function() {
+    console.log(data);
+  }, 500)
 
   var xhr = new XMLHttpRequest();
   xhr.withCredentials = false;
@@ -141,5 +154,5 @@ function uploadIt() {
   xhr.setRequestHeader("x-apikey", API_KEY);
   xhr.setRequestHeader("cache-control", "no-cache");
 
-  xhr.send(data);
+  //xhr.send(data);
 }
