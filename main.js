@@ -21,7 +21,7 @@ xhr.addEventListener("readystatechange", function() {
             <img src="${data.icon}" alt="" class="img-preview">
             <div class="headers">
               <p>${data.name}</p>
-              <p class="subtitle">version ${data.version}</p>
+              <p class="subtitle"> ${data.developer} [ v ${data.version} ]</p>
             </div>
           </div>
           <div class="card-des">

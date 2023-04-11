@@ -66,6 +66,7 @@ function loadIcon() {
 
 function loadSrc() {
   var value = prompt('load with source url')
+  source = value
   if (value == false || value == null) {
     document.querySelectorAll(".assets div")[1].innerHTML = `failed load         <br>
           <button onclick="$('#icon').click()">load</button>
@@ -176,5 +177,5 @@ function uploadIt() {
   xhr.setRequestHeader("cache-control", "no-cache");
 
   xhr.send(data);
-  //$("#uploadStatus").style.display = 'block'
+  $("#uploadStatus").style.display = 'block'
 }
