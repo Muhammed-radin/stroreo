@@ -120,6 +120,21 @@ button {
   animation: spin 2s infinite;
 }
 
+.preloader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100px;
+  height: 100px;
+}
+
+.preloader .preload {
+  border: 8px solid #222;
+  border-top: 8px solid transparent;
+}
+
 .btn-submit {
   width: 98%;
   text-align: center;

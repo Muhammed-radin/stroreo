@@ -115,7 +115,7 @@ function uploadIt() {
 
   var data = JSON.stringify({
     "name": document.getElementById("name").value,
-    "shor_des": shortDes,
+    "short_des": shortDes,
     "description": des,
     "version": version,
     "developer": developer,
@@ -138,6 +138,10 @@ function uploadIt() {
       }
 
       document.getElementById('stus') ? document.getElementById('stus').innerHTML = xhr.statusText + '(' + xhr.status + ")" : null
+
+      if (xhr.status == 0) {
+        document.getElementById('stus') ? document.getElementById('stus').innerHTML = 'retrying (' + xhr.status + ")" : null
+      }
     }
   });
 
@@ -147,5 +151,5 @@ function uploadIt() {
   xhr.setRequestHeader("cache-control", "no-cache");
 
   xhr.send(data);
-  $("#uploadStatus").style.display = 'block'
+  //$("#uploadStatus").style.display = 'block'
 }
