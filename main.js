@@ -31,7 +31,7 @@ xhr.addEventListener("readystatechange", function() {
             <button type="submit" class="bg-primary">download
               <ion-icon name="download-outline"></ion-icon>
             </button>
-            <button type="submit">view
+            <button type="submit" onclick="window.location.href = './view/?app=${data._id}'">view
               <ion-icon name="arrow-forward-outline"></ion-icon>
             </button>
           </div>
