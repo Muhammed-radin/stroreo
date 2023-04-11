@@ -1,0 +1,115 @@
+nav {
+  background-image: linear-gradient(to bottom, #ccc, #ddd);
+  color: #111;
+}
+
+body {
+  font-size: 12px
+}
+
+nav p {
+  padding: 0.3rem;
+  padding-left: 0.1rem;
+}
+
+nav button {
+  padding: 0.1rem;
+  margin: 0.1rem;
+}
+
+nav * {
+  color: #111;
+}
+
+#no_id {
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  width: 80%;
+  display: none;
+}
+
+.app {
+  margin: 0.5rem;
+}
+
+.app-name {
+  font-size: 18px;
+  font-weight: 500
+}
+
+.app-dev {
+  font-size: 12px
+}
+
+.app-text {
+  font-size: 11px
+}
+
+.app-post {
+  font-size: 9px;
+}
+
+.icon-info {
+  display: flex;
+  flex-direction: row;
+  font-size: 12.5px;
+  text-align: center;
+  padding: 0.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
+.icon-info ion-icon {
+  font-size: 18px
+}
+
+.icon-box {
+  padding: 0.4rem;
+  overflow-wrap: break-word;
+  width: 80px;
+}
+
+.app-des {
+  padding: 0.4rem;
+}
+
+.app-footer {
+  padding: 0.5rem;
+}
+
+.app-head {
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.tag {
+  background: #eeeeee;
+  padding: 0.5rem 1rem;
+  font-size: 12px;
+  border-radius: 20px;
+  width: max-content;
+  border: 2px solid #cccccc50;
+  margin: 0.2rem;
+}
+
+.tags {
+  display: flex;
+  flex-direction: row;
+  overflow: scroll;
+}
+
+.more-info p {
+  padding: 0.4rem 1rem;
+  border: 1px solid #ccc;
+  position: relative;
+  border-radius: 2px
+}
+
+.more-info p span {
+  position: absolute;
+  right: 10px;
+}
