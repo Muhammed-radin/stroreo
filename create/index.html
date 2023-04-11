@@ -60,13 +60,21 @@
     <div class="session">
       <p>Click to load your source:</p>
       <div class="assets">
-        <div onclick="$('#icon').click()">icon</div>
+        <div>icon
+          <br>
+          <button onclick="$('#icon').click()">load</button>
+          <button onclick="loadIcon()">url</button>
+        </div>
         <input type="file" accept="image, image/*, image/png" id="icon">
 
         <!--div onclick="$('#screenshots').click()">screenshots (optional)</div>
         <input type="file" accept="image, image/*, image/png" multiple id="screenshots"-->
 
-        <div onclick="$('#source').click()">source </div>
+        <div>source
+          <br>
+          <button onclick="$('#source').click()">load</button>
+          <button onclick="loadSrc()">url</button>
+        </div>
         <input type="file" id="source">
       </div>
     </div>
@@ -92,7 +100,9 @@
         </button>
       </div>
     </div>
-    <center style="display: none" id="uploadStatus"><p id="stus">Uploading...</p><progress max=100 id="progress"></progress></center>
+    <center style="display: none" id="uploadStatus">
+      <p id="stus">Uploading...</p><progress max=100 id="progress"></progress>
+    </center>
   </div>
 
   <script src="post.js"></script>

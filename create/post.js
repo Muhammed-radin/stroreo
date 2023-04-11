@@ -54,6 +54,31 @@ $("#icon").onchange = function() {
   loader.readAsDataURL($('#icon').files[0])
 }
 
+function loadIcon() {
+  var value = prompt('load with icon url')
+  icon = value
+  document.querySelectorAll(".assets div")[0].innerHTML = `<img src="${value}">        <div>icon
+          <br>
+          <button onclick="$('#icon').click()">load</button>
+          <button onclick="loadIcon()">url</button>
+        </div>`;
+}
+
+function loadSrc() {
+  var value = prompt('load with source url')
+  if (value == false || value == null) {
+    document.querySelectorAll(".assets div")[1].innerHTML = `failed load         <br>
+          <button onclick="$('#icon').click()">load</button>
+          <button onclick="loadIcon()">url</button>
+    `;
+  } else {
+    document.querySelectorAll(".assets div")[1].innerHTML = `loaded           <br>
+          <button onclick="$('#icon').click()">load</button>
+          <button onclick="loadIcon()">url</button>
+    `;
+  }
+}
+
 $('#source').onchange = function() {
   var loader = new FileReader()
   loader.onloadend = function() {
