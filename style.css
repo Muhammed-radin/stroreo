@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  font-size: 14px
 }
 
 /*
@@ -120,6 +121,12 @@ button {
   animation: spin 2s infinite;
 }
 
+.card-des {
+  max-height: 200px;
+  overflow: hidden;
+}
+
+
 .preloader {
   position: absolute;
   top: 50%;
@@ -131,10 +138,12 @@ button {
 }
 
 .preloader .preload {
-  border: 8px solid #222;
-  border-top: 8px solid transparent;
+  border: 5px solid #222;
+  border-top: 5px solid transparent;
   margin: 1rem;
-  font-size: 12px
+  font-size: 12px;
+  width: 30px;
+  height: 30px;
 }
 
 .btn-submit {
@@ -160,6 +169,18 @@ button {
     transform: rotate(0deg)
   }
 }
+
+/*@media screen and (max-width: 1000px) {
+  .card {
+    width: 300px
+  }
+
+  #body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}*/
 
 
 
