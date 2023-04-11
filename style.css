@@ -133,6 +133,8 @@ button {
 .preloader .preload {
   border: 8px solid #222;
   border-top: 8px solid transparent;
+  margin: 1rem;
+  font-size: 12px
 }
 
 .btn-submit {
