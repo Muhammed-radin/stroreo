@@ -88,6 +88,10 @@ nav p {
   background: #477EE0
 }
 
+.bg-danger {
+  background: #E13939;
+}
+
 input,
 textarea {
   padding: 0.2rem 1rem;
@@ -145,6 +149,8 @@ button {
   width: 30px;
   height: 30px;
 }
+
+
 
 .btn-submit {
   width: 98%;

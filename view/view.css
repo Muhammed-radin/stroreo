@@ -113,3 +113,21 @@ nav * {
   position: absolute;
   right: 10px;
 }
+
+button {
+  font-size: 13px;
+  text-align: center;
+  display: flex;
+}
+
+button ion-icon {
+  font-size: 16px;
+  padding: 0.1rem;
+}
+
+.center-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center
+}
