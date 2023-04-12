@@ -35,6 +35,12 @@ if (location.search == '' || location.search == false) {
       document.getElementById('body').style.display = 'block'
 
       document.getElementById('logo').src = res.icon
+      document.querySelectorAll('img').forEach(function(v, i) {
+        v.onerror = function() {
+          v.src = '../source/image.png'
+        }
+      })
+      
       document.getElementById('appName').innerHTML = res.name
       document.getElementById('devName').innerHTML = res.developer
       document.getElementById('postBy').innerHTML = res.author = 'author'
@@ -68,7 +74,7 @@ if (location.search == '' || location.search == false) {
       document.getElementById('textDev').innerHTML = res.developer
       document.getElementById('appDes').innerHTML = res.description
 
-
+      
     }
   });
 

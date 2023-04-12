@@ -11,11 +11,11 @@ xhr.addEventListener("readystatechange", function() {
   if (this.readyState === 4) {
     var res = xhr.response
     var json = JSON.parse(res)
-    
+
     document.getElementById('body').innerHTML = ''
-    
-    json.forEach((data, index)=>{
-    var html = `
+
+    json.forEach((data, index) => {
+      var html = `
         <div class="card">
           <div class="card-head">
             <img src="${data.icon}" alt="" class="img-preview">
@@ -37,7 +37,13 @@ xhr.addEventListener("readystatechange", function() {
           </div>
         </div>
     `
-    document.getElementById('body').innerHTML += html
+      document.getElementById('body').innerHTML += html
+
+      document.querySelectorAll('img').forEach(function(v, i) {
+        v.onerror = function (){
+          v.src = 'source/image.png'
+        }
+      })
     })
   }
 });
