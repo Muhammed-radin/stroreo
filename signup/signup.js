@@ -44,10 +44,18 @@ document.getElementById('submit').onclick = function() {
     xhr.addEventListener("readystatechange", function() {
       if (this.readyState === 4) {
         console.log(this.responseText);
-        logIt('account '+xhr.statusText+" [ status: "+xhr.status+"]", 'green')
+        logIt('account ' + xhr.statusText + " [ " + xhr.status + "]", 'green')
+
+        if (xhr.status == 0 || xhr.status == 404) {
+          logIt("can't create an account", 'red')
+        }
 
         window.onerror = function(e) {
           alert(e)
+        }
+
+        if (xhr.status == 201) {
+          location.href = '../login/?n=' + $("#name").value + "&e=" + $("#email").value + "&p=" + $("#password").value + "&dl=true"
         }
       }
     });
@@ -56,7 +64,7 @@ document.getElementById('submit').onclick = function() {
     xhr.setRequestHeader("content-type", "application/json");
     xhr.setRequestHeader("x-apikey", API_KEY);
     xhr.setRequestHeader("cache-control", "no-cache");
-
+    
     xhr.send(data);
   }
 }
