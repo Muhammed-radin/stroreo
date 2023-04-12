@@ -5,10 +5,32 @@
   left: 50%;
   transform: translate(-50%);
   flex-direction: column;
-  width: 70%;
+  width: 75%;
+}
+
+body {
+  font-size: 13px
+}
+
+input {
+  font-size: 13px
 }
 
 .form p {
   align-self: flex-start;
   margin-top: 0.5rem;
+}
+
+#log {
+  margin: 0.1rem;
+  font-size: 11px;
+  font-weight: 500
+}
+
+.green {
+  color: #45B127;
+}
+
+.red {
+  color: #FF240C;
 }
