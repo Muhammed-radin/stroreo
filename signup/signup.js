@@ -1,4 +1,4 @@
-const API_KEY = '7d230a37b7740b4944de3ad4661aefc7e277e'
+const API_KEY = '64336d2939cf552ef728c0e1'
 const WEB_URL = 'https://grean-9ebb.restdb.io/rest/accounts'
 const DB_NAME = 'grean-9ebb'
 
@@ -30,10 +30,13 @@ document.getElementById('submit').onclick = function() {
     logIt('please remove spaces in email', 'red')
   } else {
     logIt('creating account, please wait...', 'green')
-    
-    var data = {
-      "":$("#name").value
-    }
+
+    var data = JSON.stringify({
+      "name": $("#name").value,
+      "email": $("#email").value,
+      "password": $("#password").value,
+      "isAdmin": "false"
+    })
 
     var xhr = new XMLHttpRequest();
     xhr.withCredentials = false;
@@ -41,7 +44,8 @@ document.getElementById('submit').onclick = function() {
     xhr.addEventListener("readystatechange", function() {
       if (this.readyState === 4) {
         console.log(this.responseText);
-        
+        logIt('account '+xhr.statusText+" [ status: "+xhr.status+"]", 'green')
+
         window.onerror = function(e) {
           alert(e)
         }
