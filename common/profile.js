@@ -1,8 +1,8 @@
-function goToSign(){
+function goToSign(main){
   if (JSON.parse(localStorage.getItem('account'))){
     goToProfile()
   } else {
-    location.href = '../signup'
+    location.href = main == undefined ? '../signup' : './signup'
   }
 }
 

@@ -40,7 +40,7 @@ xhr.addEventListener("readystatechange", function() {
       document.getElementById('body').innerHTML += html
 
       document.querySelectorAll('img').forEach(function(v, i) {
-        v.onerror = function (){
+        v.onerror = function() {
           v.src = 'source/image.png'
         }
       })
@@ -54,3 +54,8 @@ xhr.setRequestHeader("x-apikey", API_KEY);
 xhr.setRequestHeader("cache-control", "no-cache");
 
 xhr.send(data);
+
+
+document.querySelector('nav ion-icon[name="person-circle-outline"]').onclick = function() {
+  goToSign(true)
+}

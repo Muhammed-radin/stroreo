@@ -142,12 +142,12 @@ button {
 }
 
 .preloader .preload {
-  border: 5px solid #222;
-  border-top: 5px solid transparent;
+  border: 3px solid #3688D2;
+  border-top: 3px solid transparent;
   margin: 1rem;
   font-size: 12px;
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
 }
 
 
@@ -192,7 +192,20 @@ button {
 
 .card button:hover,
 .btn-hover:hover {
-  box-shadow: 2px 2px 3px inset #33333350
+  /*box-shadow: 0px 2px 3px #48c646;*/
+  filter: drop-shadow(0px 3.5px 5px #43c040)
+}
+
+button:hover {
+  filter: drop-shadow(0px 3.5px 5px #43c040)
+}
+
+.bg-primary:hover {
+  filter: drop-shadow(0px 3.5px 4px #477EE0) !important
+}
+
+.bg-danger:hover {
+  filter: drop-shadow(0px 3.5px 5px #E13939)
 }
 
 .card ion-icon {
