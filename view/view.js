@@ -45,6 +45,30 @@ if (location.search == '' || location.search == false) {
         document.getElementById('tags').innerHTML += '<div class="tag">' + v + '</div>'
       })
 
+      var platform = ''
+
+      if (res.website) {
+        platform += "website"
+      }
+
+      if (res.android) {
+        platform += platform.length == 0 ? "android" : ", android"
+      }
+
+      if (res.ios) {
+        platform += platform.length == 0 ? "ios" : ", ios"
+      }
+
+      if (res.another) {
+        platform += platform.length == 0 ? "source" : ", source"
+      }
+
+      document.getElementById('textVer').innerHTML = res.version
+      document.getElementById('textPlat').innerHTML = platform
+      document.getElementById('textDev').innerHTML = res.developer
+      document.getElementById('appDes').innerHTML = res.description
+
+
     }
   });
 

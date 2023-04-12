@@ -1,0 +1,14 @@
+.form {
+  padding: 0.5rem;
+  display: flex;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  flex-direction: column;
+  width: 70%;
+}
+
+.form p {
+  align-self: flex-start;
+  margin-top: 0.5rem;
+}
