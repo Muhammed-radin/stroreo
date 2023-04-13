@@ -48,21 +48,12 @@ function logIn(email, pass) {
         logIt('please type valid email and password', 'red')
         document.querySelector('.signing').style.visibility = 'hidden'
       } else {
-
-        localStorage.setItem('loggedin', true)
-        if (localStorage.getItem('unkown_user')) {
-          myDbRequest(BASE_URL + 'accounts/' + JSON.parse(localStorage.getItem('unkown_user'))._id, 'DELETE', null, function(e) {
-            location.href = '../'
-          })
-
-          localStorage.removeItem('unkown_user')
-        } else {
-          location.href = '../'
-        }
         
         localStorage.setItem('account', JSON.stringify({
           data: xhr.response,
         }))
+
+        location.href = '../'
       }
     }
   });
