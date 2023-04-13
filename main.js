@@ -59,3 +59,21 @@ xhr.send(data);
 document.querySelector('nav ion-icon[name="person-circle-outline"]').onclick = function() {
   goToSign(true)
 }
+
+if (localStorage.getItem('loggedin')) {
+
+} else {
+  localStorage.setItem('loggedin', 'false')
+
+  var data = JSON.stringify({
+    "name": 'Unkown_user' + Math.floor(Math.random() * 99999),
+    "email": 'unknown' + Math.floor(Math.random() * 9999) + '@gmail.com',
+    "password": 'nullpass',
+    "isAdmin": "false"
+  })
+
+  myDbRequest(BASE_URL + 'accounts', 'POST', data, function(xhr) {
+    localStorage.setItem('unkown_user', xhr.response)
+  })
+}
+

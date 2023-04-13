@@ -113,6 +113,7 @@ button {
   border-radius: 7px;
   color: #fff;
   margin: 0.2rem;
+  transition: 0.2s;
 }
 
 .preload {
@@ -197,15 +198,19 @@ button {
 }
 
 button:hover {
-  filter: drop-shadow(0px 3.5px 5px #43c040)
+  filter: drop-shadow(0px 2px 3px #43c040)
+}
+
+nav button:hover {
+  filter: drop-shadow(0 0 0 transparent)
 }
 
 .bg-primary:hover {
-  filter: drop-shadow(0px 3.5px 4px #477EE0) !important
+  filter: drop-shadow(0px 2px 3px #477EE0) !important
 }
 
 .bg-danger:hover {
-  filter: drop-shadow(0px 3.5px 5px #E13939)
+  filter: drop-shadow(0px 2px 3px #E13939)
 }
 
 .card ion-icon {

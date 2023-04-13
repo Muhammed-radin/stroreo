@@ -51,7 +51,17 @@ function logIn(email, pass) {
         localStorage.setItem('account', JSON.stringify({
           data: xhr.response,
         }))
-        
+
+        localStorage.setItem('loggedin', true)
+        if (localStorage.getItem('unkown_user')) {
+          myDbRequest(BASE_URL + 'accounts/' + JSON.parse(localStorage.getItem('unkown_user'))._id, 'DELETE', null, function(e) {
+            alert(e.status);
+          })
+
+          localStorage.removeItem('unkown_user')
+        }
+
+
         location.href = '../'
       }
     }
