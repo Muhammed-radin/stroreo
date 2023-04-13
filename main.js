@@ -60,8 +60,15 @@ document.querySelector('nav ion-icon[name="person-circle-outline"]').onclick = f
   goToSign(true)
 }
 
-if (localStorage.getItem('loggedin')) {
-
+if (JSON.parse(localStorage.getItem('loggedin')) == true) {
+  myDbRequest(BASE_URL + 'accounts/' + JSON.parse(localStorage.getItem('account'))._id, 'GET', null, function(xhr) {
+    if (xhr.status == 400 || xhr.status == 403 || xhr.status == 404) {
+      if (confirm('cannot get your account, because your account banned or removed. please create new account, are you ready to signup')){
+        location.href = 'signup'
+      }
+      //localStorage.clear()
+    }
+  })
 } else {
   localStorage.setItem('loggedin', 'false')
 
@@ -76,4 +83,3 @@ if (localStorage.getItem('loggedin')) {
     localStorage.setItem('unkown_user', xhr.response)
   })
 }
-
