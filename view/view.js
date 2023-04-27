@@ -45,6 +45,10 @@ if (location.search == '' || location.search == false) {
       document.getElementById('devName').innerHTML = res.developer
       document.getElementById('postBy').innerHTML = res.author = 'author'
       document.getElementById('appDes').innerHTML = res.description
+      document.getElementById('downloadBtn').onclick = function (){
+        window.open(res.source)
+        console.log(res)
+      }
 
       document.getElementById('tags').innerHTML = ''
       res.tags.forEach(function(v, i) {
